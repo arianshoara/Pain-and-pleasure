@@ -10,6 +10,52 @@
             direction: rtl;
             text-align: right;
         }
+        
+        /* دکمه منو در گوشه بالا سمت چپ */
+        #menuButton {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            background: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            z-index: 1000;
+        }
+
+        /* منوی اطلاعات تماس */
+        #contactMenu {
+            position: fixed;
+            top: 50px;
+            left: 15px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            width: 220px;
+            padding: 10px;
+            display: none; /* مخفی در ابتدا */
+            z-index: 999;
+        }
+
+        #contactMenu a {
+            display: block;
+            padding: 8px 10px;
+            text-decoration: none;
+            color: black;
+            border-bottom: 1px solid #ddd;
+        }
+
+        #contactMenu a:last-child {
+            border-bottom: none;
+        }
+
+        #contactMenu a:hover {
+            background: #f5f5f5;
+        }
+        
         .icons {
             display: flex;
             justify-content: center;
@@ -36,6 +82,28 @@
     </style>
 </head>
 <body class="is-preload">
+
+    <!-- دکمه نمایش منو -->
+    <button id="menuButton">☰ منو</button>
+
+    <!-- منوی اطلاعات تماس -->
+    <div id="contactMenu">
+        <a href="https://arianshoara.github.io/.github.io/index.html">🌐 وبسایت</a>
+        <a href="https://www.instagram.com/arian__sho2/">📷 اینستاگرام</a>
+        <a href="mailto:arian311380@gmail.com">✉️ ایمیل</a>
+        <a href="https://t.me/ariansho">💬 تلگرام</a>
+    </div>
+
+    <script>
+        document.getElementById("menuButton").addEventListener("click", function() {
+            var menu = document.getElementById("contactMenu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        });
+    </script>
 
     <!-- Header -->
     <section id="header">
@@ -289,46 +357,4 @@
                             </div>
                         </article>
                         <article>
-                            <a href="#" class="image"><img src="images/pic03.jpg" alt="تصویر ۳" /></a>
-                            <div class="inner">
-                              <h4>رمزگشایی از اسرار طبیعت</h4>
-                              <p>
-                                با بهره‌گیری از هنر و تکنولوژی، به درک عمیق‌تری از زیبایی‌های پنهان طبیعت پرداختم و رازهای نهان آن را گشوده‌ام.
-                              </p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Four -->
-            <section id="four">
-                <div class="container">
-                    <h3>تماس با من</h3>
-                    <p>
-                      اگر می‌خواهید با من در ارتباط باشید، می‌توانید از طریق فرم زیر پیام خود را ارسال کنید یا از طریق ایمیل، تلگرام و اینستاگرام با من تماس بگیرید. نظرات، پیشنهادات و همکاری‌های شما برای من ارزشمند است.
-                    </p>
-                    <form method="post" action="#">
-                        <div class="row gtr-uniform">
-                            <div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="نام" /></div>
-                            <div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="ایمیل" /></div>
-                            <div class="col-12"><input type="text" name="subject" id="subject" placeholder="موضوع" /></div>
-                            <div class="col-12"><textarea name="message" id="message" placeholder="پیام" rows="6"></textarea></div>
-                            <div class="col-12">
-                                <ul class="actions">
-                                    <li><input type="submit" class="primary" value="ارسال پیام" /></li>
-                                    <li><input type="reset" value="تنظیم مجدد فرم" /></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </section>
-
-        </div>
-
-        <!-- Footer -->
-        <section id="footer">
-            <div class="container">
-                <ul class="copyright">
-                    <li>&copy; تمامی حقوق این سایت متعلق به آرین شعرا می‌باشد
+                            <a href="#" class="image"><img src="images/pic03
